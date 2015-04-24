@@ -9,12 +9,7 @@ ENV LANG C.UTF-8
 ENV JAVA_VERSION 7u75
 ENV JAVA_DEBIAN_VERSION 7u75-2.5.4-2
 
-RUN apt-get update && apt-get install -y openjdk-7-jdk && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
-
-ENV JENKINS_HOME /var/jenkins_home
-
+RUN apt-get update && apt-get install -y openjdk-7-jre && rm -rf /var/lib/apt/lists/*
 
 RUN wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 RUN sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
