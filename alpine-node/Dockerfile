@@ -19,6 +19,8 @@ RUN apk update &&\
     # Cleanup
     rm -rf /tmp/* /var/cache/apk/*
 
+RUN apk update && apk add curl make gcc g++ python linux-headers paxctl libgcc libstdc++
+
 # Start container
 CMD ["npm","-version"]
 
